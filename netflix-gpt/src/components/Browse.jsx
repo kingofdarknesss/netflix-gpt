@@ -1,8 +1,12 @@
 import React from 'react'
+import Header from './Header'
 
 const Browse = () => {
   return (
-    <div className="bg-black min-h-[100vh] h-auto text-white pt-24">Browse</div>
+    <div className=" min-h-[100vh] h-auto text-white">
+      
+      <Header/>
+      Browse</div>
   )
 }
 

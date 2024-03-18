@@ -1,6 +1,4 @@
-import React from 'react'
-import Login from './Login'
-import Browse from './Browse'
+
 import { useEffect } from 'react';
 import { useDispatch } from "react-redux";
 import { auth } from "../utils/firebase.jsx";
@@ -9,7 +7,7 @@ import {
 } from "firebase/auth";
 import { addUser, removeUser } from "../utils/userSlice.jsx";
 import { Outlet } from 'react-router-dom';
-import Header from './Header';
+// import Header from './Header';
 const Body = () => {
       const dispatch = useDispatch();
 
@@ -18,7 +16,7 @@ const Body = () => {
           if (user) {
             const { uid, displayName, email } = user;
             dispatch(
-              addUser({ uid: uid, email: email, displayName: "vaibhav"})
+              addUser({ uid: uid, email: email, displayName: displayName})
             );
             console.log(uid, displayName, email);
           } else {
@@ -28,8 +26,8 @@ const Body = () => {
       }, []);
 
   return (
-    <div>
-      <Header/>
+    <div className="relative">
+      {/* <Header/> */}
       <Outlet/>
     </div>
   )
