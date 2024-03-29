@@ -6,10 +6,11 @@ import {
   onAuthStateChanged
 } from "firebase/auth";
 import { addUser, removeUser } from "../utils/userSlice.jsx";
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 // import Header from './Header';
 const Body = () => {
       const dispatch = useDispatch();
+      const navigate=useNavigate()
 
       useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -17,16 +18,20 @@ const Body = () => {
             const { uid, displayName, email } = user;
             dispatch(
               addUser({ uid: uid, email: email, displayName: displayName})
+              
+              
             );
-            console.log(uid, displayName, email);
+            navigate("/browse");
+            // console.log(uid, displayName, email);
           } else {
             dispatch(removeUser());
+            navigate("/")
           }
         });
       }, []);
 
   return (
-    <div className="relative">
+    <div className="relative scrollbar-hide">
       {/* <Header/> */}
       <Outlet/>
     </div>
