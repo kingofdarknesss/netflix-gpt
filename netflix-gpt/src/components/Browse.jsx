@@ -10,7 +10,7 @@ const Browse = () => {
   const gptToggle=useSelector(store=>store.gpt.toggleGptsearch)
 
   return (
-    <div className=" min-h-[100vh] h-auto text-white">
+    <div className=" min-h-[100vh] h-auto text-white scrollbar-hide">
       <Header />
       {gptToggle ? (
         <GptSearch />

@@ -12,7 +12,7 @@ export const API_OPTIONS = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YjEyNWI4ZmE2NTg3M2Y4ZWYzNDQxMjk5NzI4NzE0ZiIsInN1YiI6IjY1Zjg3MGI2ZDhmNDRlMDE2MzUwYWQ5NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.KAqWqBjqczFlaAnc-P4iVx2Sq3iRFtuoJ-d4E5LuUSs",
+      ,
   },
 };
 export const VIDEO_API = "https://api.themoviedb.org/3/movie/";
@@ -24,3 +24,6 @@ export const SUPPORTED_LANGUAGES = [
   },
   { identifier: "hindi", name: "Hindi" },
 ];
+
+export const SEARCH_API =
+  "https://api.themoviedb.org/3/search/movie?query=salaar&include_adult=false&language=en-US&page=1";
